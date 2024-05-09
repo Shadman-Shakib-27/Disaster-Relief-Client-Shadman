@@ -67,11 +67,11 @@ const Dashboard = () => {
       <PieChart width={700} height={700}>
         <Pie
           data={chartData}
-          cx="50%"
+          cx="70%"
           cy="50%"
           labelLine={false}
           label={renderCustomizedLabel}
-          outerRadius={180}
+          outerRadius={150}
           // fill="#8884d8"
           dataKey="quantity"
         >

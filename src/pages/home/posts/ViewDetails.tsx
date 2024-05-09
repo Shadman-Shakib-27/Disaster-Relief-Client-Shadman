@@ -5,8 +5,6 @@ import { useGetSinglePostQuery } from "@/redux/feathers/posts/postApi";
 import { Link, useParams } from "react-router-dom";
 
 const ViewDetails = () => {
-  // const data: TPosts = useLoaderData();
-
   const { id } = useParams();
   const { data } = useGetSinglePostQuery(id);
 
@@ -20,32 +18,43 @@ const ViewDetails = () => {
 
       <div className="flex flex-col lg:flex-row gap-8">
         <img
-          className="w-1/2 h-[400px] rounded-md shadow-md hover:scale-105 hover:shadow-2xl transition-all "
+          className="w-full lg:w-1/2 h-auto lg:h-[400px] rounded-md shadow-md hover:scale-105 hover:shadow-2xl transition-all"
           src={data?.image}
           alt="Post image"
         />
-        <div className="space-y-4">
-          <h1 className="text-xl font-semibold">Title: {data?.title}</h1>
-          <h1 className=" font-medium">
-            Category: <span className="font-semibold">{data?.category}</span>
+        <div className="lg:w-1/2 space-y-4">
+          <h1 className="text-xl font-semibold">
+            <span className="font-bold">Title: </span> {data?.title}
           </h1>
-          <h1 className=" font-medium">
-            Quantity: <span className="font-semibold">{data?.quantity}</span>
+          <h1 className="font-medium">
+            <span className="font-bold"> Category: </span>
+            <span className="font-semibold">{data?.category}</span>
           </h1>
-          <h1 className=" font-medium">
-            Manufacturer:
+          <h1 className="font-medium">
+            <span className="font-bold"> Quantity: </span>
+            <span className="font-semibold">{data?.quantity}</span>
+          </h1>
+          <h1 className="font-medium">
+            <span className="font-bold"> Manufacturer: </span>
             <span className="font-semibold">{data?.manufacturer}</span>
           </h1>
-          <h1 className=" font-medium">
-            Price: <span className="font-semibold">{data?.price_per_unit}</span>
+          <h1 className="font-medium">
+            <span className="font-bold"> Price: </span>
+            <span className="font-semibold">{data?.price_per_unit}</span>
           </h1>
-          <h1 className=" font-medium">
-            Expiration Date:
+          <h1 className="font-medium">
+            <span className="font-bold"> Expiration Date: </span>
             <span className="font-semibold">{data?.expiration_date}</span>
           </h1>
-          <p className="text-lg pb-6">{data?.description}</p>
+          <h1 className="font-medium">
+            <span className="font-bold"> Description: </span>
+            <span className="text-lg pb-6">{data?.description}</span>
+          </h1>
+
           <Link to="/dashboard/create-supply">
-            <Button className="text-xl py-6 px-10 ">Donate Now</Button>
+            <Button className="text-xl w-full py-6 mt-4 px-10">
+              Donate Now
+            </Button>
           </Link>
         </div>
       </div>

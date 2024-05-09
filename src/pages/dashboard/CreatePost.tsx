@@ -75,7 +75,7 @@ const CreatePost = () => {
               {...register("title", { required: true })}
             />
             {errors.title && (
-              <span className="text-sm text-red-400">Title is required</span>
+              <span className="text-sm text-red-400">Title is Required</span>
             )}
           </div>
           <div className="space-y-2 ">
@@ -98,7 +98,7 @@ const CreatePost = () => {
             </Select>
 
             {errors.items && (
-              <span className="text-sm text-red-400">Category is required</span>
+              <span className="text-sm text-red-400">Category is Required</span>
             )}
           </div>
           <div className="space-y-2 ">
@@ -109,7 +109,7 @@ const CreatePost = () => {
               {...register("quantity")}
             />
             {errors.items && (
-              <span className="text-sm text-red-400">Quantity is required</span>
+              <span className="text-sm text-red-400">Quantity is Required</span>
             )}
           </div>
           <div className="space-y-2 ">

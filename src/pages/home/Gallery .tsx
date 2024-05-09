@@ -25,7 +25,7 @@ const Gallery = () => {
                   <h1 className="font-dmserif text-3xl font-bold text-white">
                     Food Distribution
                   </h1>
-                  <p className="lg:mb-3 -mb-24 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <p className="lg:mb-10 -mb-24 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     Provide timely access to essential resources, promoting food
                     security and well-being for all members of our community.
                   </p>
@@ -43,7 +43,7 @@ const Gallery = () => {
                   <h1 className="font-dmserif text-3xl font-bold text-white">
                     Medicine
                   </h1>
-                  <p className="lg:mb-3 -mb-24 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <p className="lg:mb-10 -mb-24 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     Provide timely access to essential resources, promoting food
                     security and well-being for all members of our community.
                   </p>
@@ -79,7 +79,7 @@ const Gallery = () => {
                   <h1 className="font-dmserif text-3xl font-bold text-white">
                     Cash
                   </h1>
-                  <p className="lg:mb-3 -mb-24  text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <p className="lg:mb-10 -mb-24  text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     Provide timely access to essential resources, promoting food
                     security and well-being for all members of our community.
                   </p>
@@ -98,7 +98,7 @@ const Gallery = () => {
                 <h1 className="font-dmserif text-3xl font-bold text-white">
                   Hygiene Product
                 </h1>
-                <p className="lg:mb-24 mb-24  text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <p className="lg:mb-16 mb-24  text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   Provide timely access to essential resources, promoting food
                   security and well-being for all members of our community.
                 </p>
