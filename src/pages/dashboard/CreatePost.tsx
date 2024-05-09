@@ -58,7 +58,7 @@ const CreatePost = () => {
   };
 
   return (
-    <div className="p-12">
+    <div className="p-4 md:p-12">
       <form
         className="space-y-5 lg:w-3/4 mx-auto border shadow-sm  rounded-sm p-4 lg:p-8"
         onSubmit={handleSubmit(onSubmit)}
@@ -66,7 +66,7 @@ const CreatePost = () => {
         <h1 className="text-secondary text-4xl font-semibold text-center mb-3">
           Create <span className="text-primary">Post</span>
         </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
             <label className="text-xl">Title</label>
             <Input
@@ -91,7 +91,7 @@ const CreatePost = () => {
                     Hygiene Products
                   </SelectItem>
                   <SelectItem value="Medical Essentials">
-                  Medical Essentials
+                    Medical Essentials
                   </SelectItem>
                 </SelectGroup>
               </SelectContent>

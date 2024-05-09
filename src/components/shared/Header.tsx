@@ -2,45 +2,66 @@ import { NavLink } from "react-router-dom";
 import Container from "./Container";
 import logo from "../../assets/Images/logo.png";
 import { Button } from "../ui/button";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "@/Provider/AuthProvider";
+import { Menu } from "react-feather";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-  const hadleLogout = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleToggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const handleLogout = () => {
     logOut()
       .then(() => {
-        localStorage.removeItem("car-access-token");
+        localStorage.removeItem("POST-Access-Token");
       })
       .catch((err) => console.error(err));
   };
+
   return (
-    <Container>
-      <nav className="h-20 flex flex-col md:flex-row items-center justify-between ">
-        <NavLink to="/" className="flex justify-center items-center">
-          <img className="size-14" src={logo} alt="" />
-          <h1 className="text-primary font-medium text-2xl">
-            <span className="text-secondary font-semibold">D</span>isaster
-            Relief
-          </h1>
-        </NavLink>
-        <ul className="space-x-5 ml-4 lg:ml-0 text-lg font-semibold">
-          <NavLink to="/supplies">All Supplies</NavLink>
-          {user ? (
-            <>
-              <NavLink to="/dashboard">Dashboard</NavLink>
-              <Button onClick={hadleLogout} className="text-lg">
-                <NavLink to="/">Logout</NavLink>
-              </Button>
-            </>
-          ) : (
-            <Button className="text-lg">
-              <NavLink to="/login">Login</NavLink>
+    <div className="lg:shadow-md mb-8 lg:mb-0">
+      <Container>
+        <nav className="h-20  flex flex-col md:flex-row items-center justify-between ">
+          <div className="flex justify-between w-full md:w-auto">
+            <NavLink to="/" className="flex justify-center items-center">
+              <img className="size-14" src={logo} alt="" />
+              <h1 className="text-primary font-medium text-2xl">
+                <span className="text-secondary font-semibold">D</span>isaster
+                Relief
+              </h1>
+            </NavLink>
+            <Button className="text-lg md:hidden" onClick={handleToggleMenu}>
+              <Menu />
             </Button>
-          )}
-        </ul>
-      </nav>
-    </Container>
+          </div>
+          <ul
+            className={`${
+              menuOpen ? "flex" : "hidden"
+            } md:flex flex-col md:flex-row items-center space-x-5 ml-4 lg:ml-0 text-lg font-semibold`}
+          >
+            <NavLink className="ml-5" to="/supplies">
+              All Supplies
+            </NavLink>
+            {user ? (
+              <>
+                <NavLink to="/dashboard">Dashboard</NavLink>
+                <Button onClick={handleLogout} className="text-lg">
+                  <NavLink to="/">Logout</NavLink>
+                </Button>
+              </>
+            ) : (
+              <Button className="text-lg">
+                <NavLink to="/login">Login</NavLink>
+              </Button>
+            )}
+          </ul>
+        </nav>
+      </Container>
+    </div>
   );
 };
 

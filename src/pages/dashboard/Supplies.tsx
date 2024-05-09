@@ -19,23 +19,24 @@ import { toast } from "sonner";
 const Supplies = () => {
   const posts = useGetAllPostQuery(undefined, {});
   const [removePost, { isSuccess }] = useRemovePostMutation();
+
   const handleRemove = (id: any) => {
     removePost(id);
     if (isSuccess) {
-      toast.success("post is deleted");
+      toast.success("Post is Deleted Successfully!!");
     }
   };
 
   return (
     <div className="p-4 border-1 shadow-md">
-      <div className="my-4 flex justify-end gap-5 mr-12">
+      <div className="my-4 flex flex-col lg:flex-row items-center justify-between lg:justify-end gap-5 lg:mr-12">
         <Link to="/">
-          <Button className="text-xl py-6 px-8 bg-primary text-white">
+          <Button className="text-xl py-3 px-6 lg:py-6 lg:px-8 bg-primary text-white">
             Go To Home
           </Button>
         </Link>
         <Link to="/dashboard/create-supply">
-          <Button className="text-xl py-6 px-8 bg-primary text-white">
+          <Button className="text-xl py-3 px-6 lg:py-6 lg:px-8 bg-primary text-white">
             Add Supply
           </Button>
         </Link>
@@ -43,7 +44,7 @@ const Supplies = () => {
       <Table className="p-3">
         <TableHeader>
           <TableRow className="text-lg">
-            <TableHead className=" pr-0">Serial</TableHead>
+            <TableHead className="pr-0">Serial</TableHead>
             <TableHead>Image</TableHead>
             <TableHead>Title</TableHead>
             <TableHead>Category</TableHead>
@@ -57,7 +58,11 @@ const Supplies = () => {
             <TableRow key={index}>
               <TableCell className="font-medium">{index + 1}</TableCell>
               <TableCell>
-                <img className="w-16 h-12 rounded-sm" src={post.image} alt="" />
+                <img
+                  className="w-16 h-12 lg:w-24 lg:h-16 rounded-sm"
+                  src={post.image}
+                  alt="Post Image"
+                />
               </TableCell>
               <TableCell className="text-lg">{post?.title}</TableCell>
               <TableCell className="text-lg">{post?.category}</TableCell>

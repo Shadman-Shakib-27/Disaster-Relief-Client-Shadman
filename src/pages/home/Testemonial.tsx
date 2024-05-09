@@ -9,8 +9,8 @@ import useScrollGrow from "@/hooks/ScrollGrowHook";
 const Testimonial = () => {
   const { style, componentRef } = useScrollGrow();
   const [ref] = useKeenSlider<HTMLDivElement>({
-    loop: true,
-    mode: "free",
+    loop: false,
+    mode: "free-snap",
     slides: { perView: 3, spacing: 25 },
   });
 
@@ -28,7 +28,7 @@ const Testimonial = () => {
           className="keen-slider__slide number-slide1"
         >
           <div className="p-8 rounded-xl bg-[#FFF9EE] space-y-5 h-[350px]">
-            <div className="flex gap-3">
+            <div className="lg:flex w-fit h-fit gap-3">
               <img src={image} alt="" />
               <div>
                 <h1 className="text-[#061C3D] text-xl font-medium">
@@ -43,7 +43,7 @@ const Testimonial = () => {
             <p className="text-[#061C3D]">
               “Golio is one of the BEST web designers I've ever worked with
               professionally. I am a repeat customer who continues to work with
-              Zakir because of his talent/skills, great customer service, work
+              Shadman because of his talent/skills, great customer service, work
               ethic, and attention to detail. ”
             </p>
             <div className="pt-4">
@@ -65,7 +65,7 @@ const Testimonial = () => {
           className="keen-slider__slide number-slide2"
         >
           <div className="p-8 rounded-xl bg-[#E7F5E8] space-y-5 h-[350px]">
-            <div className="flex gap-3">
+            <div className="lg:flex w-fit h-fit gap-3">
               <img src={image} alt="" />
               <div>
                 <h1 className="text-[#061C3D] text-xl font-medium">
@@ -101,7 +101,7 @@ const Testimonial = () => {
           className="keen-slider__slide number-slide3"
         >
           <div className="p-8 rounded-xl bg-[#F5F6F7] space-y-5 h-[350px]">
-            <div className="flex gap-3">
+            <div className="lg:flex w-fit h-fit gap-3">
               <img src={image} alt="" />
               <div>
                 <h1 className="text-[#061C3D] text-xl font-medium">
@@ -138,7 +138,7 @@ const Testimonial = () => {
           className="keen-slider__slide number-slide4"
         >
           <div className="p-8 rounded-xl bg-[#FFF9EE] space-y-5 h-[350px]">
-            <div className="flex gap-3">
+            <div className="lg:flex w-fit h-fit gap-3">
               <img src={image} alt="" />
               <div>
                 <h1 className="text-[#061C3D] text-xl font-medium">
@@ -153,7 +153,7 @@ const Testimonial = () => {
             <p className="text-[#061C3D]">
               “Golio is one of the BEST web designers I've ever worked with
               professionally. I am a repeat customer who continues to work with
-              Zakir because of his talent/skills, great customer service, work
+              Shadman because of his talent/skills, great customer service, work
               ethic, and attention to detail. ”
             </p>
             <div className="pt-4">
@@ -175,7 +175,7 @@ const Testimonial = () => {
           className="keen-slider__slide number-slide5"
         >
           <div className="p-8 rounded-xl bg-[#E7F5E8] space-y-5 h-[350px]">
-            <div className="flex gap-3">
+            <div className="lg:flex w-fit h-fit gap-3">
               <img src={image} alt="" />
               <div>
                 <h1 className="text-[#061C3D] text-xl font-medium">
@@ -211,7 +211,7 @@ const Testimonial = () => {
           className="keen-slider__slide number-slide6"
         >
           <div className="p-8 rounded-xl bg-[#F5F6F7] space-y-5 h-[350px]">
-            <div className="flex gap-3">
+            <div className="lg:flex w-fit h-fit gap-3">
               <img src={image} alt="" />
               <div>
                 <h1 className="text-[#061C3D] text-xl font-medium">

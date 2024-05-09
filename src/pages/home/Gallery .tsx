@@ -35,7 +35,7 @@ const Gallery = () => {
           </div>
 
           <div>
-            <div className="group cardHover">
+            <div className="group cardHover lg:h-[260px] h-[122px]">
               <div>
                 <img className="gallaryImage" src={Medicine} />
                 <div className="absoulateDiv"></div>
@@ -71,7 +71,7 @@ const Gallery = () => {
           </div>
 
           <div>
-            <div className="group cardHover">
+            <div className="group cardHover lg:h-[272px] h-[130px]">
               <div>
                 <img className="gallaryImage" src={Cash} />
                 <div className="absoulateDiv"></div>
@@ -90,7 +90,7 @@ const Gallery = () => {
         </div>
         
         <div className="col-span-12 lg:col-span-4 mx-auto rounded-md">
-          <div className="group cardHover h-[80vh]">
+          <div className="group cardHover lg:h-[540px]">
             <div>
               <img className="gallaryImage" src={Mask} />
               <div className="absoulateDiv"></div>
@@ -98,7 +98,7 @@ const Gallery = () => {
                 <h1 className="font-dmserif text-3xl font-bold text-white">
                   Hygiene Product
                 </h1>
-                <p className="lg:mb-10 mb-24  text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <p className="lg:mb-24 mb-24  text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   Provide timely access to essential resources, promoting food
                   security and well-being for all members of our community.
                 </p>
