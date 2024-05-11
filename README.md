@@ -1,30 +1,87 @@
-# React + TypeScript + Vite
+##### Welcome to Shadman's Disaster Relief Donation Platform Website. It designed by react.js with typeScript.ts. Use Framer motion for animation. Shadchen also use for tailwind library.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#### Instructions on how to run the application locally.
 
-Currently, two official plugins are available:
+Clone the project.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+    git clone https://github.com/Shadman-Shakib-27/Disaster-Relief-Client-Shadman.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Go to project directory
+
+```bash
+    cd the project
+```
+
+Install require dependance
+
+```bash
+    npm install
+```
+
+Run server
+
+```bash
+npm run dev
+
+```
+
+##### Then check how to work this project in browser
+
+###### Home Page and Dashboard
+
+Show home page in browser
+
+```bash
+http://localhost:5173/
+```
+
+Show all post
+
+```bash
+ http://localhost:5173/supplies
+
+```
+
+Show Loaderboard according to height to lowest quantity donate
+
+```bash
+http://localhost:5173/leaderboard
+
+```
+
+Create Volunteer
+
+```bash
+http://localhost:5173/volunteer
+
+```
+
+Show All Volunteer
+
+```bash
+http://localhost:5173/about-us
+
+```
+
+Show Comment and do comment for help or click ####Gratitude menu item
+
+```bash
+http://localhost:5173/community
+
+```
+
+If you have logged in show dashboard button
+
+```bash
+ http://localhost:5173/dashboard
+
+```
+
+Create A new posr to Click ## Add Event ## Button
+
+```bash
+ http://localhost:5173/dashboard/create-supply
+
+```
