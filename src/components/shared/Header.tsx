@@ -7,6 +7,7 @@ import { AuthContext } from "@/Provider/AuthProvider";
 import { Menu } from "react-feather";
 
 const Header = () => {
+  //@ts-ignore
   const { user, logOut } = useContext(AuthContext);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -19,7 +20,8 @@ const Header = () => {
       .then(() => {
         localStorage.removeItem("POST-Access-Token");
       })
-      .catch((err) => console.error(err));
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .catch((err: any) => console.error(err));
   };
 
   return (

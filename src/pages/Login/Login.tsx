@@ -16,22 +16,25 @@ import { toast } from "sonner";
 
 const Login = () => {
   const form = useForm();
+  //@ts-ignore
   const { signIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-
+  //@ts-ignore
   const onSubmit = (data) => {
     const email = data.email;
     const password = data.password;
 
     signIn(email, password)
+      //@ts-ignore
       .then((result) => {
         const user = result.user;
-        // console.log(user);
+        console.log(user);
         toast.success("User Login Successfully...");
         navigate(from, { replace: true });
       })
+      //@ts-ignore
       .catch((err) => console.error(err));
   };
 

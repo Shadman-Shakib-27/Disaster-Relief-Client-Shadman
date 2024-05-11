@@ -17,6 +17,7 @@ import { AuthContext } from "@/Provider/AuthProvider";
 
 const Registration = () => {
   const form = useForm();
+  //@ts-ignore
   const { createUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -28,15 +29,17 @@ const Registration = () => {
     const password = data.password;
 
     createUser(email, password)
+      //@ts-ignore
       .then((result) => {
         const loggedUser = result.user;
         toast.success("User Created Successfully....");
         updateUserData(loggedUser, userName);
         navigate(from, { replace: true });
       })
+      //@ts-ignore
       .catch((err) => console.error(err));
   };
-
+  //@ts-ignore
   const updateUserData = (user, name) => {
     updateProfile(user, { displayName: name })
       .then(() => {})

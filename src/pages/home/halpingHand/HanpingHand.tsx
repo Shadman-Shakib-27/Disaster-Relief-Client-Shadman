@@ -40,6 +40,7 @@ const HelpingHand = () => {
   );
 };
 
+ //@ts-ignore
 const CounterBlock = ({ value, unit, label }) => (
   <div className="text-4xl lg:text-5xl font-bold flex flex-col items-center lg:items-start">
     <div className="flex items-center">

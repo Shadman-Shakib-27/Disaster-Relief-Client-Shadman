@@ -2,7 +2,7 @@ import { Controller } from "react-hook-form";
 import { Input } from "antd";
 import { TInput } from "@/types";
 
-const FoodInput = ({ type, name, label, placeholder }: TInput) => {
+const DisasterInput = ({ type, name, label, placeholder }: TInput) => {
   return (
     <div className="mb-4">
       <p className="text-lg mb-1">{label ? `${label}` : null}</p>
@@ -16,4 +16,4 @@ const FoodInput = ({ type, name, label, placeholder }: TInput) => {
   );
 };
 
-export default FoodInput;
+export default DisasterInput;

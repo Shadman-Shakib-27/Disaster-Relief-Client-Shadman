@@ -1,7 +1,7 @@
 import { TForm } from "@/types";
 import { FormProvider, useForm } from "react-hook-form";
 
-const FoodForm = ({ onSubmit, children }: TForm) => {
+const DisasterForm = ({ onSubmit, children }: TForm) => {
   const methods = useForm();
   return (
     <FormProvider {...methods}>
@@ -10,4 +10,4 @@ const FoodForm = ({ onSubmit, children }: TForm) => {
   );
 };
 
-export default FoodForm;
+export default DisasterForm;

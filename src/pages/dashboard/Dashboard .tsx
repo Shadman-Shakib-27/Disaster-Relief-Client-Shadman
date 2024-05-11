@@ -75,6 +75,7 @@ const Dashboard = () => {
           // fill="#8884d8"
           dataKey="quantity"
         >
+          {/*  @ts-ignore */}
           {chartData?.map((entry, index: number) => (
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
@@ -90,6 +91,7 @@ const Dashboard = () => {
           paddingAngle={5}
           dataKey="quantity"
         >
+          {/*  @ts-ignore */}
           {chartData?.map((entry, index: number) => (
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}

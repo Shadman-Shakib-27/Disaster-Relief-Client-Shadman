@@ -6,15 +6,12 @@ type TCounerTypes = {
   start: number;
   end: number;
 };
-// type TTriggerTypes = {
-//   onExit?: boolean,
-//   onEnter?: boolean
-// }
 
 const CounterScroller = ({ start, end }: TCounerTypes) => {
   const [counterOn, setCounterOn] = useState(false);
   return (
     <div className="text-center text-5xl my-12">
+      {/* @ts-ignore */}
       <ScrollTrigger
         onEnter={() => setCounterOn(true)}
         onExit={() => setCounterOn(false)}

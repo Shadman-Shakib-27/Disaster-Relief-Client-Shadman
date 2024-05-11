@@ -18,6 +18,7 @@ const SuppliesPost = () => {
       />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {data?.slice(0, 6).map((item: TPosts) => (
+          //@ts-ignore
           <PostCard item={item} key={item._id} />
         ))}
       </div>

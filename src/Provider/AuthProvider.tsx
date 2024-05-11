@@ -8,11 +8,12 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
-import { createContext, useEffect, useState } from "react";
+import { ReactNode, createContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
-const AuthProvider = ({ children }) => {
+
+const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const googleProvider = new GoogleAuthProvider();
@@ -39,30 +40,9 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+      //@ts-ignore
       setUser(currentUser);
       setLoading(false);
-      // console.log(currentUser);
-      //   if (currentUser && currentUser.email) {
-      //     fetch("http://localhost:5000/jwt", {
-      //       method: "POST",
-      //       headers: {
-      //         "content-type": "application/json",
-      //       },
-      //       body: JSON.stringify(loggedUser),
-      //     })
-      //       .then((res) => res.json())
-      //       .then((data) => {
-      //         // set jwt token local storage
-      //         localStorage.setItem("car-access-token", data.token);
-      //           Swal.fire({
-      //             position: "top-end",
-      //             icon: "success",
-      //             title: "Login successfully....",
-      //             showConfirmButton: false,
-      //             timer: 1500,
-      //           });
-      //       });
-      //   }
     });
     return () => {
       return unSubscribe();
@@ -79,6 +59,7 @@ const AuthProvider = ({ children }) => {
   };
 
   return (
+    //@ts-ignore
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
 };

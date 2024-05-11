@@ -1,13 +1,13 @@
 import { NavLink } from "react-router-dom";
 import { Button } from "../ui/button";
+import Error from "../../assets/Images/Error.jpg"
 
 const NotFound = () => {
   return (
     <div className="flex flex-col gap-3 justify-center items-center h-screen">
-      <h1 className="font-semibold text-purple-500 text-6xl">Opps !</h1>
-      <p className="text-4xl text-cyan-500 ">Page not found</p>
+      <img src={Error} alt="Error" height={500} width={600} />
       <NavLink to="/">
-        <Button>Go to Home</Button>
+        <Button className="bg-red-500 text-white hover:text-white">Go to Home</Button>
       </NavLink>
     </div>
   );

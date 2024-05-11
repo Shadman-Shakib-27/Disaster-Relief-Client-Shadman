@@ -1,19 +1,10 @@
 import Container from "@/components/shared/Container";
-// import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import image from "../../assets/Images/review/Invisible.png";
 import netflix from "../../assets/Images/review/Vector.png";
 import google from "../../assets/Images/review/google.png";
 import youtube from "../../assets/Images/review/youtube.png";
-
-const settings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 2,
-};
 
 const Reviews = () => {
   return (
@@ -118,7 +109,7 @@ const Reviews = () => {
         <p className="text-[#061C3D]">
           “Golio is one of the BEST web designers I've ever worked with
           professionally. I am a repeat customer who continues to work with
-         Shadman because of his talent/skills, great customer service, work
+          Shadman because of his talent/skills, great customer service, work
           ethic, and attention to detail. ”
         </p>
         <img className="pt-8" src={netflix} alt="" />

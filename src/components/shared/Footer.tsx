@@ -77,8 +77,8 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex justify-between items-center py-8 text-white border-t-[1px] border-">
-          <p> @ {year}. All Rights Reserved.</p>
-          <p>Developed By Shadman</p>
+          <p> @ {year}. All Rights Reserved</p>
+          {/* <p>Developed By Shadman</p> */}
           <nav className="space-x-5">
             <NavLink to="/">Terms</NavLink>
             <NavLink to="/">Privacy</NavLink>

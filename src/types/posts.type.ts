@@ -5,7 +5,6 @@ export type TPosts = {
   category: string;
   quantity: string;
   description: string;
-  nutritional_info: object;
   manufacturer: string;
   expiration_date: string;
   origin: string;

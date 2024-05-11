@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { toast } from "sonner";
+import { User } from "firebase/auth";
 
 const initialState = {
   name: "",
@@ -18,11 +19,11 @@ const authSlice = createSlice({
         .then((result) => {
           const loggedUser = result.user;
           console.log(loggedUser);
-
+          console.log(state);
           updatedUserData(loggedUser, name);
 
           if (loggedUser?.email) {
-            toast.success("user Create Successfully");
+            toast.success("User Create Successfully");
           }
         })
         .catch((error) => {
@@ -32,7 +33,7 @@ const authSlice = createSlice({
   },
 });
 
-const updatedUserData = (user, name) => {
+const updatedUserData = (user: User, name: string) => {
   updateProfile(user, { displayName: name })
     .then(() => {})
     .catch((error) => {

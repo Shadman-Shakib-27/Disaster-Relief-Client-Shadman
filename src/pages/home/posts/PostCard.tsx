@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { TPosts } from "@/types";
 import { Link } from "react-router-dom";
 
+//@ts-ignore
 const PostCard = ({ item }: TPosts) => {
   return (
     <div

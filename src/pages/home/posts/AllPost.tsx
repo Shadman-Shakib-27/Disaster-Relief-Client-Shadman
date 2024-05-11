@@ -15,7 +15,8 @@ const AllPost = () => {
       />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {data?.map((item: TPosts) => (
-          <PostCard item={item} />
+          //@ts-ignore
+          <PostCard key={item._id} item={item} />
         ))}
       </div>
     </Container>

@@ -10,12 +10,18 @@ const ScrollBar = () => {
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
     if (pos === 0) {
+      //@ts-ignore
       scrollProgress.style.display = "none";
     } else {
+      //@ts-ignore
       scrollProgress.style.display = "";
-      let scrollValue = Math.round((pos * 100) / calcHeight);
-      let valueContent = "⇧";
+       //@ts-ignore
+      const scrollValue = Math.round((pos * 100) / calcHeight);
+      //@ts-ignore
+      const valueContent = "⇧";
+      //@ts-ignore
       scrollProgress.style.background = `conic-gradient(#1b8241 ${scrollValue}%,#2b294f ${scrollValue}%)`;
+      //@ts-ignore
       progressValue.textContent = `${valueContent}`;
     }
   };
