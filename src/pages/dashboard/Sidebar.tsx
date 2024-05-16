@@ -15,7 +15,7 @@ const Sidebar = () => {
           }
         >
           <Home className="w-5" />
-          <span className="text-lg">Home</span>
+          <span className="text-lg font-semibold">Home</span>
         </NavLink>
         <NavLink
           to="/dashboard"
