@@ -31,11 +31,11 @@ const Hero = () => {
           >
             <motion.div
               variants={introChildren}
-              className="space-y-8 px-4 mt-8 md:mt-0"
+              className="space-y-8 px-4 md:mt-0"
             >
               <motion.h1
                 variants={introChildren}
-                className="text-2xl md:text-3xl lg:text-5xl font-extrabold leading-tight text-center md:text-left"
+                className="text-3xl md:text-3xl lg:text-5xl font-extrabold leading-tight text-center md:text-left"
               >
                 Join Hands for Hope Post-Disaster Relief Donation Platform!
               </motion.h1>

@@ -14,91 +14,98 @@ const Gallery = () => {
         lTitle="Gallery"
         description="Our mission is to be a beacon of hope in times of crisis, offering a platform for individuals, organizations, and corporations to come together and make a meaningful difference in the lives of those in need."
       />
-      <div className="grid grid-cols-12 gap-3">
-        <div className="col-span-12 lg:col-span-8 grid grid-cols-2 gap-2">
-          <div className="">
-            <div className="group cardHover">
-              <div>
-                <img className="gallaryImage" src={Donation} />
-                <div className="absoulateDiv"></div>
-                <div className="cardContetWrapper">
-                  <h1 className="font-dmserif text-3xl font-bold text-white">
-                    Food Distribution
-                  </h1>
-                  <p className="lg:mb-10 -mb-24 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    Provide timely access to essential resources, promoting food
-                    security and well-being for all members of our community.
-                  </p>
-                </div>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-3">
+        <div className="col-span-1 lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <div className="group cardHover">
+            <div className="relative">
+              <img
+                className="gallaryImage w-full h-full object-cover rounded-sm"
+                src={Donation}
+              />
+              <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 p-4 text-white">
+                <h1 className="font-dmserif text-center text-xl sm:text-3xl font-bold">
+                  Food Distribution
+                </h1>
+                <p className="text-sm sm:text-lg text-center italic opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  Provide timely access to essential resources, promoting food
+                  security and well-being for all members of our community.
+                </p>
               </div>
             </div>
           </div>
 
-          <div>
-            <div className="group cardHover lg:h-[260px] h-[122px]">
-              <div>
-                <img className="gallaryImage" src={Medicine} />
-                <div className="absoulateDiv"></div>
-                <div className="cardContetWrapper">
-                  <h1 className="font-dmserif text-3xl font-bold text-white">
-                    Medicine
-                  </h1>
-                  <p className="lg:mb-10 -mb-24 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    Provide timely access to essential resources, promoting food
-                    security and well-being for all members of our community.
-                  </p>
-                </div>
+          <div className="group cardHover">
+            <div className="relative h-[150px] sm:h-[260px]">
+              <img
+                className="gallaryImage w-full h-full object-cover rounded-sm"
+                src={Medicine}
+              />
+              <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 p-4 text-white">
+                <h1 className="font-dmserif text-center text-xl sm:text-3xl font-bold">
+                  Medicine
+                </h1>
+                <p className="text-sm sm:text-lg text-center italic opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  Provide timely access to essential resources, promoting food
+                  security and well-being for all members of our community.
+                </p>
               </div>
             </div>
           </div>
 
-          <div>
-            <div className="group cardHover">
-              <div>
-                <img className="gallaryImage" src={Cloths} />
-                <div className="absoulateDiv"></div>
-                <div className="cardContetWrapper">
-                  <h1 className="font-dmserif text-3xl pb-8 font-bold text-white">
-                    Cloths
-                  </h1>
-                  <p className="lg:mb-3 -mb-24  text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    Provide timely access to essential resources, promoting food
-                    security and well-being for all members of our community.
-                  </p>
-                </div>
+          <div className="group cardHover">
+            <div className="relative">
+              <img
+                className="gallaryImage w-full h-full object-cover rounded-sm"
+                src={Cloths}
+              />
+              <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 p-4 text-white">
+                <h1 className="font-dmserif text-xl text-center sm:text-3xl font-bold pb-4">
+                  Cloths
+                </h1>
+                <p className="text-sm sm:text-lg italic opacity-0 transition-opacity duration-300 text-center group-hover:opacity-100">
+                  Provide timely access to essential resources, promoting food
+                  security and well-being for all members of our community.
+                </p>
               </div>
             </div>
           </div>
 
-          <div>
-            <div className="group cardHover lg:h-[272px] h-[130px]">
-              <div>
-                <img className="gallaryImage" src={Cash} />
-                <div className="absoulateDiv"></div>
-                <div className="cardContetWrapper">
-                  <h1 className="font-dmserif text-3xl font-bold text-white">
-                    Cash
-                  </h1>
-                  <p className="lg:mb-10 -mb-24  text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    Provide timely access to essential resources, promoting food
-                    security and well-being for all members of our community.
-                  </p>
-                </div>
+          <div className="group cardHover">
+            <div className="relative h-[150px] sm:h-[272px]">
+              <img
+                className="gallaryImage w-full h-full object-cover rounded-sm"
+                src={Cash}
+              />
+              <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 p-4 text-white">
+                <h1 className="font-dmserif text-center text-xl sm:text-3xl font-bold">
+                  Cash
+                </h1>
+                <p className="text-sm text-center sm:text-lg italic opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  Provide timely access to essential resources, promoting food
+                  security and well-being for all members of our community.
+                </p>
               </div>
             </div>
           </div>
         </div>
-        
-        <div className="col-span-12 lg:col-span-4 mx-auto rounded-md">
-          <div className="group cardHover lg:h-[540px]">
-            <div>
-              <img className="gallaryImage" src={Mask} />
-              <div className="absoulateDiv"></div>
-              <div className="cardContetWrapper">
-                <h1 className="font-dmserif text-3xl font-bold text-white">
+
+        <div className="col-span-1 lg:col-span-4 mx-auto rounded-md w-full">
+          <div className="group cardHover h-[300px] sm:h-[400px] lg:h-[540px]">
+            <div className="relative h-full w-full">
+              <img
+                className="gallaryImage w-full h-full object-cover rounded-sm"
+                src={Mask}
+              />
+              <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 p-4 text-white">
+                <h1 className="font-dmserif text-center text-xl sm:text-3xl font-bold">
                   Hygiene Product
                 </h1>
-                <p className="lg:mb-16 mb-24  text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <p className="text-sm sm:text-lg italic text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   Provide timely access to essential resources, promoting food
                   security and well-being for all members of our community.
                 </p>

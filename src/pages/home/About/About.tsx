@@ -41,9 +41,12 @@ const About = () => {
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.4, staggerChildren: 0.2 }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
       >
-        <motion.div variants={introChildren} className="border shadow-sm">
+        <motion.div
+          variants={introChildren}
+          className="border rounded-md p-2 border-[#4CAE4F] shadow-sm"
+        >
           <img className="w-full rounded-sm  h-[300px]" src={image1} alt="" />
           <div className="p-3 space-y-3">
             <h1 className="text-lg font-semibold">Our Impact To Society</h1>
@@ -61,7 +64,10 @@ const About = () => {
             <Button className="w-full"> Learn More</Button>
           </div>
         </motion.div>
-        <motion.div variants={introChildren} className="border shadow-sm">
+        <motion.div
+          variants={introChildren}
+          className="border rounded-md p-2 border-[#4CAE4F] shadow-sm"
+        >
           <img className="w-full rounded-sm  h-[300px]" src={image2} alt="" />
           <div className="p-3 space-y-3">
             <h1 className="text-lg font-semibold">Sustainability Focus</h1>
@@ -79,7 +85,7 @@ const About = () => {
             <Button className="w-full"> Learn More</Button>
           </div>
         </motion.div>
-        <motion.div variants={introChildren} className="border shadow-sm">
+        <motion.div variants={introChildren} className="border rounded-md p-2 border-[#4CAE4F] shadow-sm">
           <img className="w-full rounded-sm h-[300px]" src={image3} alt="" />
           <div className="p-3 space-y-3">
             <h1 className="text-lg font-semibold">Equitable Access</h1>
