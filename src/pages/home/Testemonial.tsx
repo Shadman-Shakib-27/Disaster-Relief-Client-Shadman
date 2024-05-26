@@ -11,7 +11,15 @@ const Testimonial = () => {
   const [ref] = useKeenSlider<HTMLDivElement>({
     loop: false,
     mode: "free-snap",
-    slides: { perView: 3, spacing: 25 },
+    slides: { perView: 1, spacing: 10 },
+    breakpoints: {
+      "(min-width: 640px)": {
+        slides: { perView: 2, spacing: 15 },
+      },
+      "(min-width: 1024px)": {
+        slides: { perView: 3, spacing: 25 },
+      },
+    },
   });
 
   return (
@@ -27,7 +35,7 @@ const Testimonial = () => {
           ref={componentRef}
           className="keen-slider__slide number-slide1"
         >
-          <div className="p-8 rounded-xl bg-[#FFF9EE] space-y-5 h-[350px]">
+          <div className="p-8 rounded-xl bg-[#FFF9EE] space-y-5 lg:h-[350px] h-fit">
             <div className="lg:flex w-fit h-fit gap-3">
               <img src={image} alt="" />
               <div>
@@ -41,7 +49,7 @@ const Testimonial = () => {
               </div>
             </div>
             <p className="text-[#061C3D]">
-              “Golio is one of the BEST web designers I've ever worked with
+              “Shadman is one of the BEST web designers I've ever worked with
               professionally. I am a repeat customer who continues to work with
               Shadman because of his talent/skills, great customer service, work
               ethic, and attention to detail. ”
@@ -64,7 +72,7 @@ const Testimonial = () => {
           ref={componentRef}
           className="keen-slider__slide number-slide2"
         >
-          <div className="p-8 rounded-xl bg-[#E7F5E8] space-y-5 h-[350px]">
+          <div className="p-8 rounded-xl bg-[#E7F5E8] space-y-5 lg:h-[350px] h-fit">
             <div className="lg:flex w-fit h-fit gap-3">
               <img src={image} alt="" />
               <div>
@@ -78,9 +86,10 @@ const Testimonial = () => {
               </div>
             </div>
             <p className="text-[#061C3D]">
-              “This guy is true professional and very experienced in migration
-              and server configuration. He was able to complete my order in time
-              and as per agreed scope. Highly recommend!”
+              “Shadman is one of the BEST web designers I've ever worked with
+              professionally. I am a repeat customer who continues to work with
+              Shadman because of his talent/skills, great customer service, work
+              ethic, and attention to detail. ”
             </p>
             <div className="pt-4">
               <p className="text-lg flex gap-5 items-center">
@@ -100,7 +109,7 @@ const Testimonial = () => {
           ref={componentRef}
           className="keen-slider__slide number-slide3"
         >
-          <div className="p-8 rounded-xl bg-[#F5F6F7] space-y-5 h-[350px]">
+          <div className="p-8 rounded-xl bg-[#F5F6F7] space-y-5 lg:h-[350px] h-fit">
             <div className="lg:flex w-fit h-fit gap-3">
               <img src={image} alt="" />
               <div>
@@ -114,10 +123,10 @@ const Testimonial = () => {
               </div>
             </div>
             <p className="text-[#061C3D]">
-              “Working with Golio was a great experience, understanding person,
-              fast response time dose his work with honestly, experienced, a
-              problem solver. Gives it it's all. I highly recommend him for
-              providing beyond of high quality service.”
+              “Shadman is one of the BEST web designers I've ever worked with
+              professionally. I am a repeat customer who continues to work with
+              Shadman because of his talent/skills, great customer service, work
+              ethic, and attention to detail. ”
             </p>
             <div className="pt-4">
               <p className="text-lg flex gap-5 items-center">
@@ -137,7 +146,7 @@ const Testimonial = () => {
           ref={componentRef}
           className="keen-slider__slide number-slide4"
         >
-          <div className="p-8 rounded-xl bg-[#FFF9EE] space-y-5 h-[350px]">
+          <div className="p-8 rounded-xl bg-[#FFF9EE] space-y-5 lg:h-[350px] h-fit">
             <div className="lg:flex w-fit h-fit gap-3">
               <img src={image} alt="" />
               <div>
@@ -151,7 +160,7 @@ const Testimonial = () => {
               </div>
             </div>
             <p className="text-[#061C3D]">
-              “Golio is one of the BEST web designers I've ever worked with
+              “Shadman is one of the BEST web designers I've ever worked with
               professionally. I am a repeat customer who continues to work with
               Shadman because of his talent/skills, great customer service, work
               ethic, and attention to detail. ”
@@ -174,7 +183,7 @@ const Testimonial = () => {
           ref={componentRef}
           className="keen-slider__slide number-slide5"
         >
-          <div className="p-8 rounded-xl bg-[#E7F5E8] space-y-5 h-[350px]">
+          <div className="p-8 rounded-xl bg-[#E7F5E8] space-y-5 lg:h-[350px] h-fit">
             <div className="lg:flex w-fit h-fit gap-3">
               <img src={image} alt="" />
               <div>
@@ -188,9 +197,10 @@ const Testimonial = () => {
               </div>
             </div>
             <p className="text-[#061C3D]">
-              “This guy is true professional and very experienced in migration
-              and server configuration. He was able to complete my order in time
-              and as per agreed scope. Highly recommend!”
+              “Shadman is one of the BEST web designers I've ever worked with
+              professionally. I am a repeat customer who continues to work with
+              Shadman because of his talent/skills, great customer service, work
+              ethic, and attention to detail. ”
             </p>
             <div className="pt-4">
               <p className="text-lg flex gap-5 items-center">
@@ -210,7 +220,7 @@ const Testimonial = () => {
           ref={componentRef}
           className="keen-slider__slide number-slide6"
         >
-          <div className="p-8 rounded-xl bg-[#F5F6F7] space-y-5 h-[350px]">
+          <div className="p-8 rounded-xl bg-[#F5F6F7] space-y-5 lg:h-[350px] h-fit">
             <div className="lg:flex w-fit h-fit gap-3">
               <img src={image} alt="" />
               <div>
@@ -224,10 +234,10 @@ const Testimonial = () => {
               </div>
             </div>
             <p className="text-[#061C3D]">
-              “Working with Golio was a great experience, understanding person,
-              fast response time dose his work with honestly, experienced, a
-              problem solver. Gives it it's all. I highly recommend him for
-              providing beyond of high quality service.”
+              “Shadman is one of the BEST web designers I've ever worked with
+              professionally. I am a repeat customer who continues to work with
+              Shadman because of his talent/skills, great customer service, work
+              ethic, and attention to detail. ”
             </p>
             <div className="pt-4">
               <p className="text-lg flex gap-5 items-center">

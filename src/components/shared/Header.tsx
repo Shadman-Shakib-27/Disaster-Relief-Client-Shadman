@@ -4,10 +4,10 @@ import logo from "../../assets/Images/logo.png";
 import { Button } from "../ui/button";
 import { useContext, useState } from "react";
 import { AuthContext } from "@/Provider/AuthProvider";
-import { Menu } from "react-feather";
+import { Menu, X } from "react-feather";
 
 const Header = () => {
-  //@ts-ignore
+  // @ts-ignore
   const { user, logOut } = useContext(AuthContext);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -27,23 +27,23 @@ const Header = () => {
   return (
     <div className="lg:shadow-md mb-8 lg:mb-0">
       <Container>
-        <nav className="h-20  flex flex-col md:flex-row items-center justify-between ">
+        <nav className="h-20 flex flex-col md:flex-row items-center justify-between">
           <div className="flex justify-between w-full md:w-auto">
             <NavLink to="/" className="flex justify-center items-center">
-              <img className="size-14" src={logo} alt="" />
+              <img className="size-14" src={logo} alt="Disaster Relief Logo" />
               <h1 className="text-primary font-medium text-2xl">
                 <span className="text-secondary font-semibold">D</span>isaster
                 Relief
               </h1>
             </NavLink>
             <Button className="text-lg md:hidden" onClick={handleToggleMenu}>
-              <Menu />
+              {menuOpen ? <X /> : <Menu />}
             </Button>
           </div>
           <ul
             className={`${
               menuOpen ? "flex" : "hidden"
-            } md:flex flex-col md:flex-row items-center space-x-5 ml-4 lg:ml-0 text-lg font-semibold`}
+            } md:flex flex-col md:flex-row  z-[99] items-center space-x-5 ml-4 lg:ml-0 text-lg font-semibold`}
           >
             <NavLink className="ml-5" to="/supplies">
               All Supplies
