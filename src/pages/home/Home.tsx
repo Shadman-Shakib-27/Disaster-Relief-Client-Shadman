@@ -3,8 +3,8 @@ import SuppliesPost from "./posts/SuppliesPost";
 import Gallery from "./Gallery ";
 import About from "./About/About";
 import Volunteer from "./Volunteer/Volunteer";
-import HelpingHand from "./halpingHand/HanpingHand";
-import Testimonial from "./Testemonial";
+import HelpingHand from "./HelpingHand/HelpingHand";
+import Testimonial from "./Testimonial";
 
 const Home = () => {
   return (

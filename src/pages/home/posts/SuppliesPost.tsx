@@ -1,10 +1,10 @@
 import Container from "@/components/shared/Container";
 import { Button } from "@/components/ui/button";
-import { useGetAllPostQuery } from "@/redux/feathers/posts/postApi";
 import { TPosts } from "@/types";
 import PostCard from "./PostCard";
 import SectionTitle from "@/components/shared/SectionTitle";
 import { NavLink } from "react-router-dom";
+import { useGetAllPostQuery } from "@/redux/features/posts/postApi";
 
 const SuppliesPost = () => {
   const { data } = useGetAllPostQuery(undefined);

@@ -1,8 +1,8 @@
 import Container from "@/components/shared/Container";
 import SectionTitle from "@/components/shared/SectionTitle";
-import { useGetAllPostQuery } from "@/redux/feathers/posts/postApi";
 import { TPosts } from "@/types";
 import PostCard from "./PostCard";
+import { useGetAllPostQuery } from "@/redux/features/posts/postApi";
 
 const AllPost = () => {
   const { data } = useGetAllPostQuery(undefined);

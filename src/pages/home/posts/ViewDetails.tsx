@@ -1,7 +1,7 @@
 import Container from "@/components/shared/Container";
 import SectionTitle from "@/components/shared/SectionTitle";
 import { Button } from "@/components/ui/button";
-import { useGetSinglePostQuery } from "@/redux/feathers/posts/postApi";
+import { useGetSinglePostQuery } from "@/redux/features/posts/postApi";
 import { Link, useParams } from "react-router-dom";
 
 const ViewDetails = () => {

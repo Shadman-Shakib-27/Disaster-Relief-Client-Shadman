@@ -1,4 +1,4 @@
-import { useGetAllPostQuery } from "@/redux/feathers/posts/postApi";
+import { useGetAllPostQuery } from "@/redux/features/posts/postApi";
 import { TPosts } from "@/types";
 import { TChartLabel } from "@/types/chart.type";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";

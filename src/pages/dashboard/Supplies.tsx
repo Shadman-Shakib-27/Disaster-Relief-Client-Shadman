@@ -10,7 +10,8 @@ import {
 import {
   useGetAllPostQuery,
   useRemovePostMutation,
-} from "@/redux/feathers/posts/postApi";
+} from "@/redux/features/posts/postApi";
+
 import { TPosts } from "@/types";
 import { Edit, Trash2 } from "lucide-react";
 import { Link } from "react-router-dom";

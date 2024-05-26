@@ -2,7 +2,7 @@ import App from "@/App";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import NotFound from "@/components/shared/404";
 import Login from "@/pages/Login/Login";
-import Registration from "@/pages/Regestration/Regestration";
+import Registration from "@/pages/Registration/Registration";
 import CreatePost from "@/pages/dashboard/CreatePost";
 import Dashboard from "@/pages/dashboard/Dashboard ";
 import Supplies from "@/pages/dashboard/Supplies";
