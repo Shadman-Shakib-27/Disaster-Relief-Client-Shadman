@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useCreatePostMutation } from "@/redux/feathers/posts/postApi";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import {
   Select,
@@ -13,6 +12,7 @@ import {
 } from "@/components/ui/select";
 import { useState } from "react";
 import { toast } from "sonner";
+import { useCreatePostMutation } from "@/redux/features/posts/postApi";
 
 const UpdatedPost = () => {
   const [addPost, { isSuccess }] = useCreatePostMutation();
