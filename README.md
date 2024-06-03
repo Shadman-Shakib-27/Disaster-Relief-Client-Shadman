@@ -1,87 +1,51 @@
-##### Welcome to Shadman's Disaster Relief Donation Platform Website. It designed by react.js with typeScript.ts. Use Framer motion for animation. Shadchen also use for tailwind library.
+# Disaster Relief
 
-#### Instructions on how to run the application locally.
+Disaster Relief is an online platform dedicated to providing aid and resources during emergencies. The site connects users with essential services, donations, and volunteer opportunities to support disaster-stricken areas. It emphasizes rapid response and efficient distribution of resources to those in need. The platform is designed to facilitate community support and collaboration in times of crisis, ensuring timely and effective relief efforts.
 
-Clone the project.
+![Disaster Relief Screenshot](https://your-image-link/thumb2.png)
 
-```bash
-    git clone https://github.com/Shadman-Shakib-27/Disaster-Relief-Client-Shadman.git
-```
+## Table of Contents
 
-Go to project directory
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Live Demo](#live-demo)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-```bash
-    cd the project
-```
+## Features
 
-Install require dependance
+- Connects users with essential services and resources during emergencies.
+- Facilitates donations and volunteer opportunities.
+- Emphasizes rapid response and efficient resource distribution.
+- Encourages community support and collaboration.
+- Ensures timely and effective relief efforts.
 
-```bash
-    npm install
-```
+## Tech Stack
 
-Run server
+- **Frontend:**
+  - HTML5
+  - Tailwind CSS
+  - TypeScript
+  - React
+  - Redux
+  - Shadcn UI
+  - Sooner
+  - Rtk Query
 
-```bash
-npm run dev
+- **Backend:**
+  - MongoDB
 
-```
+## Live Demo
 
-##### Then check how to work this project in browser
+Check out the live demo of Disaster Relief [here](https://disaster-relief-client-shadman.vercel.app/).
 
-###### Home Page and Dashboard
+## Installation
 
-Show home page in browser
+1. **Clone the repository:**
 
-```bash
-http://localhost:5173/
-```
-
-Show all post
-
-```bash
- http://localhost:5173/supplies
-
-```
-
-Show Loaderboard according to height to lowest quantity donate
-
-```bash
-http://localhost:5173/leaderboard
-
-```
-
-Create Volunteer
-
-```bash
-http://localhost:5173/volunteer
-
-```
-
-Show All Volunteer
-
-```bash
-http://localhost:5173/about-us
-
-```
-
-Show Comment and do comment for help or click ####Gratitude menu item
-
-```bash
-http://localhost:5173/community
-
-```
-
-If you have logged in show dashboard button
-
-```bash
- http://localhost:5173/dashboard
-
-```
-
-Create A new posr to Click ## Add Event ## Button
-
-```bash
- http://localhost:5173/dashboard/create-supply
-
-```
+   ```bash
+   git clone https://github.com/Shadman-Shakib-27/Disaster-Relief-Client-Shadman.git
+   cd Disaster-Relief-Client-Shadman
