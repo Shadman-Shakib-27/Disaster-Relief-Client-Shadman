@@ -50,7 +50,6 @@ Check out the live demo of Disaster Relief [Live Site](https://disaster-relief-c
    ```bash
    npm install
 
-
 3. **Run the development server:**
 
    ```bash
