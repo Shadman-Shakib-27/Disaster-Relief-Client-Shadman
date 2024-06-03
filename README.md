@@ -1,8 +1,7 @@
-# Disaster Relief
+# Disaster Relief Client By Shaman 
 
 Disaster Relief is an online platform dedicated to providing aid and resources during emergencies. The site connects users with essential services, donations, and volunteer opportunities to support disaster-stricken areas. It emphasizes rapid response and efficient distribution of resources to those in need. The platform is designed to facilitate community support and collaboration in times of crisis, ensuring timely and effective relief efforts.
 
-![Disaster Relief Screenshot](https://your-image-link/thumb2.png)
 
 ## Table of Contents
 
@@ -10,10 +9,6 @@ Disaster Relief is an online platform dedicated to providing aid and resources d
 - [Tech Stack](#tech-stack)
 - [Live Demo](#live-demo)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ## Features
 
@@ -40,7 +35,7 @@ Disaster Relief is an online platform dedicated to providing aid and resources d
 
 ## Live Demo
 
-Check out the live demo of Disaster Relief [here](https://disaster-relief-client-shadman.vercel.app/).
+Check out the live demo of Disaster Relief [Live Site](https://disaster-relief-client-shadman.vercel.app/).
 
 ## Installation
 
