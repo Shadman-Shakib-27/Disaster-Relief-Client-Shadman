@@ -15,6 +15,7 @@ const postsApi = baseApi.injectEndpoints({
         url: "/posts",
         method: "GET",
       }),
+      transformResponse: (response: any) => response?.data ?? response,
       providesTags: ["post"],
     }),
     getSinglePost: builder.query({
@@ -22,6 +23,7 @@ const postsApi = baseApi.injectEndpoints({
         url: `/posts/${query}`,
         method: "GET",
       }),
+      transformResponse: (response: any) => response?.data ?? response,
     }),
     removePost: builder.mutation({
       query: (query) => ({

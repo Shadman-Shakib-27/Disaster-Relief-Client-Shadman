@@ -15,7 +15,7 @@ const ScrollBar = () => {
     } else {
       //@ts-ignore
       scrollProgress.style.display = "";
-       //@ts-ignore
+      //@ts-ignore
       const scrollValue = Math.round((pos * 100) / calcHeight);
       //@ts-ignore
       const valueContent = "⇧";

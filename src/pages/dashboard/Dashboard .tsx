@@ -1,7 +1,7 @@
 import { useGetAllPostQuery } from "@/redux/features/posts/postApi";
 import { TPosts } from "@/types";
 import { TChartLabel } from "@/types/chart.type";
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
+import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 
 const COLORS = [
   "#0088FE",
@@ -48,9 +48,9 @@ const renderCustomizedLabel = ({
 };
 
 const Dashboard = () => {
-  const posts = useGetAllPostQuery(undefined);
+  const { data } = useGetAllPostQuery(undefined);
 
-  const chartData = posts?.data?.map((d: TPosts) => {
+  const chartData = data?.map((d: TPosts) => {
     const parts = d.quantity.split(" ");
     const quantity = parseInt(parts[0]);
 

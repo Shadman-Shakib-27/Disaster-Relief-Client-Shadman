@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 import { toast } from "sonner";
 
 const Supplies = () => {
-  const posts = useGetAllPostQuery(undefined, {});
+  const { data } = useGetAllPostQuery(undefined, {});
   const [removePost, { isSuccess }] = useRemovePostMutation();
 
   const handleRemove = (id: any) => {
@@ -55,7 +55,7 @@ const Supplies = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {posts?.data?.map((post: TPosts, index: number) => (
+          {data?.map((post: TPosts, index: number) => (
             <TableRow key={index}>
               <TableCell className="font-medium">{index + 1}</TableCell>
               <TableCell>
