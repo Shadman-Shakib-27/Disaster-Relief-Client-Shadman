@@ -1,23 +1,23 @@
-import { useKeenSlider } from "keen-slider/react";
-import "keen-slider/keen-slider.min.css";
 import Container from "@/components/shared/Container";
-import image from "../../assets/Images/Invisible.png";
 import SectionTitle from "@/components/shared/SectionTitle";
-import { motion } from "framer-motion";
 import useScrollGrow from "@/hooks/ScrollGrowHook";
+import { motion } from "framer-motion";
+import "keen-slider/keen-slider.min.css";
+import { useKeenSlider } from "keen-slider/react";
+import image from "../../assets/Images/Invisible.png";
 
 const Testimonial = () => {
   const { style, componentRef } = useScrollGrow();
   const [ref] = useKeenSlider<HTMLDivElement>({
     loop: false,
     mode: "free-snap",
-    slides: { perView: 1, spacing: 10 },
+    slides: { perView: 1, spacing: 12 },
     breakpoints: {
       "(min-width: 640px)": {
-        slides: { perView: 2, spacing: 15 },
+        slides: { perView: 2, spacing: 18 },
       },
       "(min-width: 1024px)": {
-        slides: { perView: 3, spacing: 25 },
+        slides: { perView: 3, spacing: 24 },
       },
     },
   });
@@ -33,7 +33,7 @@ const Testimonial = () => {
         <motion.div
           style={style}
           ref={componentRef}
-          className="keen-slider__slide number-slide1"
+          className="keen-slider__slide number-slide1 px-2"
         >
           <div className="p-8 rounded-xl bg-[#FFF9EE] space-y-5 lg:h-[350px] h-fit">
             <div className="lg:flex w-fit h-fit gap-3">
@@ -70,7 +70,7 @@ const Testimonial = () => {
         <motion.div
           style={style}
           ref={componentRef}
-          className="keen-slider__slide number-slide2"
+          className="keen-slider__slide number-slide2 px-2"
         >
           <div className="p-8 rounded-xl bg-[#E7F5E8] space-y-5 lg:h-[350px] h-fit">
             <div className="lg:flex w-fit h-fit gap-3">
@@ -107,7 +107,7 @@ const Testimonial = () => {
         <motion.div
           style={style}
           ref={componentRef}
-          className="keen-slider__slide number-slide3"
+          className="keen-slider__slide number-slide3 px-2"
         >
           <div className="p-8 rounded-xl bg-[#F5F6F7] space-y-5 lg:h-[350px] h-fit">
             <div className="lg:flex w-fit h-fit gap-3">
@@ -144,7 +144,7 @@ const Testimonial = () => {
         <motion.div
           style={style}
           ref={componentRef}
-          className="keen-slider__slide number-slide4"
+          className="keen-slider__slide number-slide4 px-2"
         >
           <div className="p-8 rounded-xl bg-[#FFF9EE] space-y-5 lg:h-[350px] h-fit">
             <div className="lg:flex w-fit h-fit gap-3">
@@ -181,7 +181,7 @@ const Testimonial = () => {
         <motion.div
           style={style}
           ref={componentRef}
-          className="keen-slider__slide number-slide5"
+          className="keen-slider__slide number-slide5 px-2"
         >
           <div className="p-8 rounded-xl bg-[#E7F5E8] space-y-5 lg:h-[350px] h-fit">
             <div className="lg:flex w-fit h-fit gap-3">
@@ -218,7 +218,7 @@ const Testimonial = () => {
         <motion.div
           style={style}
           ref={componentRef}
-          className="keen-slider__slide number-slide6"
+          className="keen-slider__slide number-slide6 px-2"
         >
           <div className="p-8 rounded-xl bg-[#F5F6F7] space-y-5 lg:h-[350px] h-fit">
             <div className="lg:flex w-fit h-fit gap-3">

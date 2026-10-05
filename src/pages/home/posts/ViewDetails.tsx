@@ -51,11 +51,9 @@ const ViewDetails = () => {
             <span className="text-lg pb-6">{data?.description}</span>
           </h1>
 
-          <Link to="/dashboard/create-supply">
-            <Button className="text-xl w-full py-6 mt-4 px-10">
-              Donate Now
-            </Button>
-          </Link>
+          <Button asChild className="mt-4 w-full px-10 py-6 text-xl">
+            <Link to={`/donate/${id}`}>Donate Now</Link>
+          </Button>
         </div>
       </div>
     </Container>

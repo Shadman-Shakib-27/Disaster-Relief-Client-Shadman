@@ -19,12 +19,16 @@ import { toast } from "sonner";
 
 const Supplies = () => {
   const { data } = useGetAllPostQuery(undefined, {});
-  const [removePost, { isSuccess }] = useRemovePostMutation();
+  const [removePost, { isLoading: isDeleting }] = useRemovePostMutation();
 
-  const handleRemove = (id: any) => {
-    removePost(id);
-    if (isSuccess) {
-      toast.success("Post is Deleted Successfully!!");
+  const handleRemove = async (id: string) => {
+    try {
+      await removePost(id).unwrap();
+      toast.success("Post is deleted successfully.");
+    } catch (error) {
+      toast.error(
+        error instanceof Error ? error.message : "Could not delete post.",
+      );
     }
   };
 
@@ -56,7 +60,7 @@ const Supplies = () => {
         </TableHeader>
         <TableBody>
           {data?.map((post: TPosts, index: number) => (
-            <TableRow key={index}>
+            <TableRow key={post._id}>
               <TableCell className="font-medium">{index + 1}</TableCell>
               <TableCell>
                 <img
@@ -69,13 +73,29 @@ const Supplies = () => {
               <TableCell className="text-lg">{post?.category}</TableCell>
               <TableCell className="text-lg">{post?.quantity}</TableCell>
               <TableCell>
-                <Edit className="size-8 bg-blue-600 text-white p-2 rounded-sm " />
+                <Button
+                  asChild
+                  size="icon"
+                  className="bg-blue-600 text-white hover:bg-blue-700"
+                >
+                  <Link
+                    to={`/dashboard/update-supply/${post._id}`}
+                    aria-label={`Edit ${post.title}`}
+                  >
+                    <Edit className="size-4" />
+                  </Link>
+                </Button>
               </TableCell>
               <TableCell>
-                <Trash2
+                <Button
+                  size="icon"
+                  disabled={isDeleting}
                   onClick={() => handleRemove(post._id)}
-                  className="size-8 bg-red-600 text-white p-2 rounded-sm ml-3"
-                />
+                  className="ml-3 bg-red-600 text-white hover:bg-red-700"
+                  aria-label={`Delete ${post.title}`}
+                >
+                  <Trash2 className="size-4" />
+                </Button>
               </TableCell>
             </TableRow>
           ))}

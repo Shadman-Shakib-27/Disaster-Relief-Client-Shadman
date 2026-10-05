@@ -10,6 +10,14 @@ const postsApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["post"],
     }),
+    updatePost: builder.mutation({
+      query: ({ id, ...data }) => ({
+        url: `/posts/${id}`,
+        method: "PATCH",
+        body: data,
+      }),
+      invalidatesTags: ["post"],
+    }),
     getAllPost: builder.query({
       query: () => ({
         url: "/posts",
@@ -32,12 +40,22 @@ const postsApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["post"],
     }),
+    createDonation: builder.mutation({
+      query: (data) => ({
+        url: "/donations",
+        method: "POST",
+        body: data,
+      }),
+      invalidatesTags: ["donation"],
+    }),
   }),
 });
 
 export const {
   useCreatePostMutation,
+  useUpdatePostMutation,
   useGetAllPostQuery,
   useGetSinglePostQuery,
   useRemovePostMutation,
+  useCreateDonationMutation,
 } = postsApi;

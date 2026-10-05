@@ -6,8 +6,10 @@ import Registration from "@/pages/Registration/Registration";
 import CreatePost from "@/pages/dashboard/CreatePost";
 import Dashboard from "@/pages/dashboard/Dashboard ";
 import Supplies from "@/pages/dashboard/Supplies";
+import UpdatedPost from "@/pages/dashboard/UpdatedPost";
 import Home from "@/pages/home/Home";
 import AllPost from "@/pages/home/posts/AllPost";
+import Donation from "@/pages/home/posts/Donation";
 import ViewDetails from "@/pages/home/posts/ViewDetails";
 import { createBrowserRouter } from "react-router-dom";
 import PrivateRouter from "./PrivateRouter";
@@ -29,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: `/view-details/:id`,
         element: <ViewDetails />,
+      },
+      {
+        path: `/donate/:id`,
+        element: <Donation />,
       },
     ],
   },
@@ -60,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "create-supply",
         element: <CreatePost />,
+      },
+      {
+        path: "update-supply/:id",
+        element: <UpdatedPost />,
       },
     ],
   },

@@ -1,7 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import {
   Select,
   SelectContent,
@@ -10,12 +8,22 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useState } from "react";
-import { toast } from "sonner";
+import { Textarea } from "@/components/ui/textarea";
+import { uploadImage } from "@/lib/imageUpload";
 import { useCreatePostMutation } from "@/redux/features/posts/postApi";
+import { useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { toast } from "sonner";
+
+type PostFormValues = {
+  title: string;
+  quantity: string;
+  description: string;
+  image: FileList;
+};
 
 const CreatePost = () => {
-  const [addPost, { isSuccess }] = useCreatePostMutation();
+  const [addPost, { isLoading }] = useCreatePostMutation();
 
   const [category, setCategory] = useState("");
 
@@ -23,38 +31,28 @@ const CreatePost = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<PostFormValues>();
 
-  const image_hosting_url =
-    "https://api.imgbb.com/1/upload?key=4696fab4ef7dc4eb76f5a91e525f6d32";
+  const onSubmit: SubmitHandler<PostFormValues> = async (data) => {
+    if (!category) {
+      toast.error("Please select a category.");
+      return;
+    }
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    const formData = new FormData();
-    formData.append("image", data.image[0]);
+    if (!data.image?.[0]) {
+      toast.error("Please select an image.");
+      return;
+    }
 
-    fetch(image_hosting_url, {
-      method: "POST",
-      body: formData,
-    })
-      .then((res) => res.json())
-      .then((imageRes) => {
-        if (imageRes.success) {
-          const imgURL = imageRes.data.display_url;
-          const { title, description, quantity } = data;
-          const newItem = {
-            title,
-            category: category,
-            quantity,
-            description,
-            image: imgURL,
-          };
-          console.log(newItem);
-          addPost(newItem);
-          if (isSuccess) {
-            toast.success("Post Has Been Created");
-          }
-        }
-      });
+    try {
+      const image = await uploadImage(data.image[0]);
+      await addPost({ ...data, category, image }).unwrap();
+      toast.success("Post has been created.");
+    } catch (error) {
+      toast.error(
+        error instanceof Error ? error.message : "Could not create post.",
+      );
+    }
   };
 
   return (
@@ -72,7 +70,7 @@ const CreatePost = () => {
             <Input
               id="title"
               placeholder="Title"
-              {...register("title", { required: true })}
+              {...register("title", { required: "Title is required" })}
             />
             {errors.title && (
               <span className="text-sm text-red-400">Title is Required</span>
@@ -97,7 +95,7 @@ const CreatePost = () => {
               </SelectContent>
             </Select>
 
-            {errors.items && (
+            {!category && (
               <span className="text-sm text-red-400">Category is Required</span>
             )}
           </div>
@@ -106,9 +104,9 @@ const CreatePost = () => {
             <Input
               id="quantity"
               placeholder="Quantity (Number)"
-              {...register("quantity")}
+              {...register("quantity", { required: "Quantity is required" })}
             />
-            {errors.items && (
+            {errors.quantity && (
               <span className="text-sm text-red-400">Quantity is Required</span>
             )}
           </div>
@@ -122,7 +120,9 @@ const CreatePost = () => {
           <Textarea id="description" {...register("description")} />
         </div>
 
-        <Button>Create Post</Button>
+        <Button type="submit" disabled={isLoading}>
+          {isLoading ? "Creating..." : "Create Post"}
+        </Button>
       </form>
     </div>
   );

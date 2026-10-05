@@ -11,7 +11,7 @@ import {
 import { ReactNode, createContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext(null);
-const auth = getAuth(app);
+export const auth = getAuth(app);
 
 const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState(null);

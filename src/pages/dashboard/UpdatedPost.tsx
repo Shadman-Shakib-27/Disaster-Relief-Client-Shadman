@@ -1,128 +1,145 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { uploadImage } from "@/lib/imageUpload";
 import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { useState } from "react";
+  useGetSinglePostQuery,
+  useUpdatePostMutation,
+} from "@/redux/features/posts/postApi";
+import { useEffect, useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "sonner";
-import { useCreatePostMutation } from "@/redux/features/posts/postApi";
+
+type PostFormValues = {
+  title: string;
+  quantity: string;
+  description: string;
+  image?: FileList;
+};
+
+const categories = ["Food", "Hygiene Products", "Medical Essentials"];
 
 const UpdatedPost = () => {
-  const [addPost, { isSuccess }] = useCreatePostMutation();
-
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const { data: post, isLoading: isPostLoading } = useGetSinglePostQuery(id, {
+    skip: !id,
+  });
+  const [updatePost, { isLoading: isUpdating }] = useUpdatePostMutation();
   const [category, setCategory] = useState("");
+  const { register, reset, handleSubmit } = useForm<PostFormValues>();
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
-  const image_hosting_url =
-    "https://api.imgbb.com/1/upload?key=4696fab4ef7dc4eb76f5a91e525f6d32";
-
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    const formData = new FormData();
-    formData.append("image", data.image[0]);
-
-    fetch(image_hosting_url, {
-      method: "POST",
-      body: formData,
-    })
-      .then((res) => res.json())
-      .then((imageRes) => {
-        if (imageRes.success) {
-          const imgURL = imageRes.data.display_url;
-          const { title, description, quantity } = data;
-          const newItem = {
-            title,
-            category: category,
-            quantity,
-            description,
-            image: imgURL,
-          };
-          console.log(newItem);
-          addPost(newItem);
-          if (isSuccess) {
-            toast.success("Post Has Been Updated");
-          }
-        }
+  useEffect(() => {
+    if (post) {
+      setCategory(post.category ?? "");
+      reset({
+        title: post.title ?? "",
+        quantity: post.quantity ?? "",
+        description: post.description ?? "",
       });
+    }
+  }, [post, reset]);
+
+  const onSubmit: SubmitHandler<PostFormValues> = async (values) => {
+    if (!id || !category) {
+      toast.error("Please select a category.");
+      return;
+    }
+
+    try {
+      const image = values.image?.[0]
+        ? await uploadImage(values.image[0])
+        : post?.image;
+
+      await updatePost({
+        id,
+        title: values.title,
+        quantity: values.quantity,
+        description: values.description,
+        category,
+        image,
+      }).unwrap();
+      toast.success("Post has been updated.");
+      navigate("/dashboard/supplies");
+    } catch (error) {
+      toast.error(
+        error instanceof Error ? error.message : "Could not update post.",
+      );
+    }
   };
 
+  if (isPostLoading) {
+    return <p className="p-12 text-center">Loading post...</p>;
+  }
+
   return (
-    <div className="p-12">
+    <div className="p-4 md:p-12">
       <form
-        className="space-y-5 lg:w-3/4 mx-auto border shadow-sm  rounded-sm p-4 lg:p-8"
+        className="mx-auto space-y-5 rounded-sm border p-4 shadow-sm lg:w-3/4 lg:p-8"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <h1 className="text-secondary text-4xl font-semibold text-center mb-3">
-          Create <span className="text-primary">Post</span>
+        <h1 className="mb-3 text-center text-4xl font-semibold text-secondary">
+          Update <span className="text-primary">Post</span>
         </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div className="space-y-2">
-            <label className="text-xl">Title</label>
-            <Input
-              id="title"
-              placeholder="Title"
-              {...register("title", { required: true })}
-            />
-            {errors.title && (
-              <span className="text-sm text-red-400">Title is Required</span>
-            )}
+            <label className="text-xl" htmlFor="title">
+              Title
+            </label>
+            <Input id="title" {...register("title", { required: true })} />
           </div>
-          <div className="space-y-2 ">
-            <label className="text-xl">Category</label>
-            <Select onValueChange={(value) => setCategory(value)}>
-              <SelectTrigger className="w-">
-                <SelectValue placeholder="Select Category" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectItem value="Food">Food</SelectItem>
-                  <SelectItem value="Hygiene Products">
-                    Hygiene Products
-                  </SelectItem>
-                  <SelectItem value="Medical Essentials">
-                    Medical Essentials
-                  </SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
-
-            {errors.items && (
-              <span className="text-sm text-red-400">Category is Required</span>
-            )}
+          <div className="space-y-2">
+            <label className="text-xl" htmlFor="category">
+              Category
+            </label>
+            <select
+              id="category"
+              value={category}
+              onChange={(event) => setCategory(event.target.value)}
+              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+            >
+              <option value="">Select Category</option>
+              {categories.map((item) => (
+                <option key={item} value={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
           </div>
-          <div className="space-y-2 ">
-            <label className="text-xl">Quantity</label>
+          <div className="space-y-2">
+            <label className="text-xl" htmlFor="quantity">
+              Quantity
+            </label>
             <Input
               id="quantity"
-              placeholder="Quantity (Number)"
-              {...register("quantity")}
+              {...register("quantity", { required: true })}
             />
-            {errors.items && (
-              <span className="text-sm text-red-400">Quantity is Required</span>
-            )}
           </div>
-          <div className="space-y-2 ">
-            <label className="text-xl">Image</label>
-            <Input id="image" type="file" {...register("image")} />
+          <div className="space-y-2">
+            <label className="text-xl" htmlFor="image">
+              Replace image
+            </label>
+            <Input
+              id="image"
+              type="file"
+              accept="image/*"
+              {...register("image")}
+            />
           </div>
         </div>
-        <div className="space-y-2 ">
-          <label className="text-xl">Description</label>
-          <Textarea id="description" {...register("description")} />
+        <div className="space-y-2">
+          <label className="text-xl" htmlFor="description">
+            Description
+          </label>
+          <Textarea
+            id="description"
+            {...register("description", { required: true })}
+          />
         </div>
-
-        <Button>Create Post</Button>
+        <Button type="submit" disabled={isUpdating}>
+          {isUpdating ? "Updating..." : "Update Post"}
+        </Button>
       </form>
     </div>
   );
